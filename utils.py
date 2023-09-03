@@ -42,3 +42,17 @@ class Sheet:
                 empty.append(value)
         
         return empty
+
+    def get_score(self, dice: list[int], category: Category) -> int:
+        """
+        Returns the score for a set of dice in category.
+        """
+        return function_list[category](dice)
+
+    # I don't know if this should return a bool that reflects if the cell was not already filled,
+    # or if it should raise an exception like it is now TODO
+    def fill_category(self, dice: list[int], category: Category) -> None:
+        if self._sheet[category] != -1:
+            raise ValueError(f"Category: {category.name} already filled.")
+        
+        self._sheet[category] = self.get_score(dice, category)
