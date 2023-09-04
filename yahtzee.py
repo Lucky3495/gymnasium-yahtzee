@@ -1,4 +1,5 @@
 from utils import *
+from scoring import function_list
 from numpy.random import randint as np_randint
 from random import randint
 
