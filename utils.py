@@ -48,6 +48,10 @@ class Sheet:
         Returns the score for a set of dice in category.
         """
         return function_list[category](dice)
+    
+    def __getitem__(self, i):
+        assert i >= 0 and i <= 12
+        return self._sheet[i]
 
     # I don't know if this should return a bool that reflects if the cell was not already filled,
     # or if it should raise an exception like it is now TODO
