@@ -37,7 +37,10 @@ def get_score_four_of_a_kind(dice: list[int]) -> int:
         
     return 0
 
-def get_score_full_house(dice: list[int]) -> int:
+def get_score_full_house(dice: list[int], joker: bool=False) -> int:
+    if joker:
+        return 25
+    
     triple = False
     pair = False
     for die in dice:
@@ -52,7 +55,10 @@ def get_score_full_house(dice: list[int]) -> int:
     return 0
 
 # TODO: This and large_straight are not ideal (probably). Do something about it later.
-def get_score_small_straight(dice: list[int]) -> int:
+def get_score_small_straight(dice: list[int], joker: bool=False) -> int:
+    if joker:
+        return 30
+    
     sets: list[set[int]] = [
         {1, 2, 3, 4},
         {2, 3, 4, 5},
@@ -67,7 +73,10 @@ def get_score_small_straight(dice: list[int]) -> int:
     return 0
 
 
-def get_score_large_straight(dice: list[int]) -> int:
+def get_score_large_straight(dice: list[int], joker: bool=False) -> int:
+    if joker:
+        return 40
+    
     sets: list[set[int]] = [
         {1, 2, 3, 4, 5},
         {2, 3, 4, 5, 6},
