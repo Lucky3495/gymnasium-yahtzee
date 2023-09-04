@@ -42,12 +42,6 @@ class Sheet:
                 empty.append(value)
         
         return empty
-
-    def get_score(self, dice: list[int], category: Category) -> int:
-        """
-        Returns the score for a set of dice in category.
-        """
-        return function_list[category](dice)
     
     def __getitem__(self, i):
         assert i >= 0 and i <= 12
