@@ -4,6 +4,7 @@ from scoring import function_list
 class Rule(Enum):
     FORCED_JOKER = 0
     FREE_JOKER = 1
+    ORIGINAL_JOKER = 2
 
 class Category(IntEnum):
     ONES = 0
