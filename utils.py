@@ -54,6 +54,9 @@ class Sheet:
     def fill_category(self, dice: list[int], category: Category, joker: bool=False) -> None:
         if self._sheet[category] != -1:
             raise ValueError(f"Category: {category.name} already filled.")
+        if len(dice) != 5:
+            raise ValueError(f"List of dice {dice} is not of length 5. It is of length {len(dice)}.")
+
         if category in [Category.FULL_HOUSE, Category.SMALL_STRAIGHT, Category.LARGE_STRAIGHT]:
             self._sheet[category] = self.get_score(dice, category)
         else:
