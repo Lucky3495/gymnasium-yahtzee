@@ -51,8 +51,10 @@ class Sheet:
 
     # I don't know if this should return a bool that reflects if the cell was not already filled,
     # or if it should raise an exception like it is now TODO
-    def fill_category(self, dice: list[int], category: Category) -> None:
+    def fill_category(self, dice: list[int], category: Category, joker: bool=False) -> None:
         if self._sheet[category] != -1:
             raise ValueError(f"Category: {category.name} already filled.")
-        
-        self._sheet[category] = self.get_score(dice, category)
+        if category in [Category.FULL_HOUSE, Category.SMALL_STRAIGHT, Category.LARGE_STRAIGHT]:
+            self._sheet[category] = self.get_score(dice, category)
+        else:
+            self._sheet[category] = self.get_score(dice, category)
