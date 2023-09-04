@@ -11,4 +11,12 @@ class Yahtzee:
         self.dice = list(np.random.randint(low=1, high=7, size=5))
         self.rolls = 2 # number of rolls remaining, 0 means no rolls, must choose a category. (Rounds start with dice already rolled for first time)
 
-    
+    def reroll(self, mask: list[bool]) -> None:    
+        if self.rolls <= 0:
+            raise RuntimeError("No dice rolls remaining.")
+        
+        self.rolls -= 1
+        
+        for i in range(5):
+            if mask[i]:
+                self.dice[i] = randint(1, 6)
