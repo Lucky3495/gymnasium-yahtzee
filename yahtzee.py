@@ -21,9 +21,10 @@ class Yahtzee:
             if mask[i]:
                 self.dice[i] = randint(1, 6)
 
-    def get_score(self, dice: list[int], category: Category) -> int:
+    def get_score(self, category: Category) -> int:
         """
         Returns the score for a set of dice in category.
         """
-        return function_list[category](dice)
+        return function_list[category](self.dice)
+    
 
