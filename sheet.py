@@ -1,3 +1,5 @@
+from utils import Category
+
 class Sheet:
     """
     A class that represents a Yahtzee sheet.
