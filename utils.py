@@ -79,3 +79,7 @@ class Sheet:
             self._sheet[category] = self.get_score(dice, category)
         else:
             self._sheet[category] = self.get_score(dice, category)
+    
+    def __setitem__(self, i, value: int):
+        assert i >= 0 and i <= 12
+        self._sheet[i] = value
