@@ -9,19 +9,19 @@ def get_score_ones(dice: list[int]) -> int:
     return dice.count(1)
 
 def get_score_twos(dice: list[int]) -> int:
-    return dice.count(2)
+    return dice.count(2)*2
 
 def get_score_threes(dice: list[int]) -> int:
-    return dice.count(3)
+    return dice.count(3)*3
 
 def get_score_fours(dice: list[int]) -> int:
-    return dice.count(4)
+    return dice.count(4)*4
 
 def get_score_fives(dice: list[int]) -> int:
-    return dice.count(5)
+    return dice.count(5)*5
 
 def get_score_sixes(dice: list[int]) -> int:
-    return dice.count(6)
+    return dice.count(6)*6
 
 def get_score_three_of_a_kind(dice: list[int]) -> int:
     for die in dice:
