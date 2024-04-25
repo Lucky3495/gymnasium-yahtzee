@@ -29,4 +29,10 @@ class Yahtzee:
         """
         return function_list[category](self.dice)
     
+    def is_joker(self) -> bool:
+        """
+        Returns `True` if the current set of dice is a joker, otherwise returns False.
+        """
+        # the dice are a joker iff the yahtzee is socred with 50 and the current set of dice are a yahtzee
+        return self.sheet[Category.YAHTZEE] == 50 and len(set(self.dice)) == 1
 
