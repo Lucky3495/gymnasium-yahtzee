@@ -32,7 +32,13 @@ class Yahtzee:
     def is_joker(self) -> bool:
         """
         Returns `True` if the current set of dice is a joker, otherwise returns False.
+        This depends on the `JokerRule` used.
         """
-        # the dice are a joker if it's a yahtzee and the yahtzee box is already scored
-        return len(set(self.dice)) == 1
 
+        # if it's not a yahtzee, it cannot be a joker
+        if self.get_score(Category.YAHTZEE) == 0:
+            return False
+        
+        if self.sheet[self.dice[0] - 1] == -1:
+            return False
+        return True
