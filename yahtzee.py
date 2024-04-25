@@ -33,6 +33,6 @@ class Yahtzee:
         """
         Returns `True` if the current set of dice is a joker, otherwise returns False.
         """
-        # the dice are a joker iff the yahtzee is socred with 50 and the current set of dice are a yahtzee
-        return self.sheet[Category.YAHTZEE] == 50 and len(set(self.dice)) == 1
+        # the dice are a joker if it's a yahtzee and the yahtzee box is already scored
+        return len(set(self.dice)) == 1
 
