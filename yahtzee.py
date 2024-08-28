@@ -1,5 +1,4 @@
 from utils import JokerRule, Category
-from sheet import Sheet
 from scoring import function_list
 from numpy.random import randint as np_randint
 from random import randint
@@ -7,7 +6,7 @@ from random import randint
 class Yahtzee:
 
     def __init__(self, rule: JokerRule=JokerRule.FORCED_JOKER) -> None:
-        self.sheet: Sheet = Sheet()
+        self.sheet: dict[Category, int] = {category:-1 for category in Category}
         self.joker_rule: JokerRule = rule
         self.round: int = 0 # rounds will have the range [0, 12], when round == 13 the game is over
         self.dice: list[int] = list(np_randint(low=1, high=7, size=5))
