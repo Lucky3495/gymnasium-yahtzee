@@ -36,7 +36,12 @@ class Yahtzee:
         """
         Returns the score for a set of dice in category.
         """
-        return function_list[category](self.dice)
+
+        # if the score is affected by a joker, give it the is_joker boolean
+        if category in [Category.FULL_HOUSE, Category.SMALL_STRAIGHT, Category.LARGE_STRAIGHT]:
+            return function_list[category](self.dice, self.is_joker())
+        else:
+            return function_list[category](self.dice)
     
     def is_joker(self) -> bool:
         """
