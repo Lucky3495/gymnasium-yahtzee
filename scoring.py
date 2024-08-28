@@ -5,6 +5,9 @@ the score of a set of dice in a category.
 The functions return the default scores, special joker
 rules are implemented by the Sheet class."""
 
+# i admit that the way im doing this is probably stupid, im too deep in
+# (more like i can't be bothered) to think of something better
+
 def get_score_ones(dice: list[int]) -> int:
     return dice.count(1)
 

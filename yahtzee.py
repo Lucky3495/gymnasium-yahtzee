@@ -58,3 +58,11 @@ class Yahtzee:
             if self.sheet[Category(die-1)] == -1:
                 return False
         return True
+
+    def fill_category(self, category: Category) -> None:
+        if self.sheet[category] != -1:
+            raise ValueError(f"Category: {category.name} already filled.")
+        if len(self.dice) != 5: # it shouldn't come to this, unless the user modifies self.dice
+            raise ValueError(f"List of dice {self.dice} is not of length 5. It is of length {len(self.dice)}.")
+
+        self.sheet[category] = self.get_score(category)
