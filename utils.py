@@ -17,7 +17,7 @@ class JokerRule(Enum):
     # Free Choice Joker:
     # Player can choose any box, only if the upper corresponding box has already been used,
     # otherwise it would score 0 if it's used in the lower section's full house, small and large straigt.
-    # (i am not sure about the three of a kind, four of a kind, and chance, wikipedia doesn't mention them)
+    # (three of a kind, four of a kind, and chance score normally, since the yhatzee meets their criteria)
     FREE_JOKER = 1
 
     # Original Joker:
