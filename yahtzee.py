@@ -42,6 +42,8 @@ class Yahtzee:
         if self.get_score(Category.YAHTZEE) == 0:
             return False
         
-        if self.sheet[self.dice[0] - 1] == -1:
-            return False
+        if self.joker_rule == JokerRule.FREE_JOKER:
+            die = self.dice[0]
+            if self.sheet[Category(die-1)] == -1:
+                return False
         return True
