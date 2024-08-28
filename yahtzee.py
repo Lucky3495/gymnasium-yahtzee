@@ -26,6 +26,10 @@ class Yahtzee:
             if mask[i]:
                 self.dice[i] = randint(1, 6)
 
+        # if the player already has a yahtzee, and he got another one, add 100 points to the yahtzee box
+        if self.sheet[Category.YAHTZEE] > 0 and self.get_score(Category.YAHTZEE) > 0:
+            self.sheet[Category.YAHTZEE] += 100
+
     def get_score(self, category: Category) -> int:
         """
         Returns the score for a set of dice in category.
