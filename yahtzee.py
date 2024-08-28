@@ -3,9 +3,13 @@ from scoring import function_list
 from numpy.random import randint as np_randint
 from random import randint
 
+# TODO: for now this only works with the free choice JokerRule
 class Yahtzee:
 
-    def __init__(self, rule: JokerRule=JokerRule.FORCED_JOKER) -> None:
+    def __init__(self, rule: JokerRule=JokerRule.FREE_JOKER) -> None:
+        if self.joker_rule != JokerRule.FREE_JOKER:
+            raise NotImplementedError("Only `Category.FREE_JOKER` is implemented thus far.")
+        
         self.sheet: dict[Category, int] = {category:-1 for category in Category}
         self.joker_rule: JokerRule = rule
         self.round: int = 0 # rounds will have the range [0, 12], when round == 13 the game is over
