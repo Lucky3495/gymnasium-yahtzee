@@ -19,6 +19,8 @@ class Yahtzee:
     def reroll(self, mask: list[bool]) -> None:    
         if self.rolls <= 0:
             raise RuntimeError("No dice rolls remaining.")
+        if len(mask) != 5:
+            raise ValueError(f"Mask expected to be of length 5 but got a mask of length {len(mask)}")
         
         self.rolls -= 1
         
