@@ -1,4 +1,4 @@
-from utils import *
+from utils import JokerRule, Category
 from sheet import Sheet
 from scoring import function_list
 from numpy.random import randint as np_randint
